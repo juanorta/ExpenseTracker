@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -18,4 +19,6 @@ public class Category {
     @NonNull
     //travel, grocery, ...
     private String name;
+
+
 }

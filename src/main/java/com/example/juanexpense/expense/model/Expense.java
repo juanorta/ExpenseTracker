@@ -3,11 +3,11 @@ package com.example.juanexpense.expense.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.lang.Nullable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 
@@ -29,6 +29,10 @@ public class Expense {
 
     //connecting expense to category
     @ManyToOne
+
+
+    //OnDelete deletes foreign key in Expense table while also deleting primary key in Category table
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Category category;
 
     //connecting expense to user

@@ -19,10 +19,13 @@ public class CategoryController {
 
     public CategoryController(CategoryRepository categoryRepository) {
         super();
+        //set the local categoryRepository field so we can talk to the database
         this.categoryRepository = categoryRepository;
     }
 
     @GetMapping("/categories")
+
+    //returns a collection of categories
     Collection<Category> categories(){
         //select * from category
         return categoryRepository.findAll();
@@ -53,4 +56,14 @@ public class CategoryController {
         Category result = categoryRepository.save(category);
         return ResponseEntity.ok().body(result);
     }
+
+    //deletes category record by ID.
+    //because of expense's manytoone foreign-key relationship with category, it will delete a record with matching id
+    @DeleteMapping("/category/{id}")
+    ResponseEntity<Category> deleteCategory(@PathVariable Long id){
+        categoryRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
+
 }

@@ -1,4 +1,7 @@
+
+/*
 package com.example.juanexpense.expense.model;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,3 +39,4 @@ public class Goal {
     private Expense expense;
 
 }
+*/
