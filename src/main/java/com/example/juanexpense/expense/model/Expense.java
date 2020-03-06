@@ -29,8 +29,6 @@ public class Expense {
 
     //connecting expense to category
     @ManyToOne
-
-
     //OnDelete deletes foreign key in Expense table while also deleting primary key in Category table
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Category category;

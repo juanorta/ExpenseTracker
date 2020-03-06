@@ -1,4 +1,3 @@
-
 insert into user values (1, 'Morgan', 'morgan.lee03@yahoo.com')
 insert into user values (2, 'Juan', 'orta0455@gmail.com')
 insert into user values (3, 'Lelo', 'orta8608@hotmail.com')

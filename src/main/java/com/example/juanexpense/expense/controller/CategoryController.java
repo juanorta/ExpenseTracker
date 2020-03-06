@@ -48,7 +48,15 @@ public class CategoryController {
 
         return ResponseEntity.created(new URI("/api/category/" + result.getId())).body(result);
     }
+/*
+    @PostMapping("/category")
+    ResponseEntity<Category> createCategory(@Valid @RequestBody Category category) throws URISyntaxException{
+        Category result = categoryRepository.save(category);
+        return ResponseEntity.created(new URI("/api/category"+result.getId())).body(result);
+    }
 
+
+ */
     //edit or override a category
     //spring boot is smart enough to realize if it's a put, then override existing record
     @PutMapping("/category/{id}")
